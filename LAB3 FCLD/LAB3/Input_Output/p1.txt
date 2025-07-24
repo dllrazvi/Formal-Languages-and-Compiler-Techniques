@@ -1,0 +1,18 @@
+-32
+STARTPROGRAM
+VARIABLES:
+    n : int;
+    fact : int;
+BEGIN
+    WRITE("Enter a number:");
+    READ(n);
+    fact = 1;
+    WHILE n > 1 DO
+    BEGIN
+        fact = fact * n;
+        n = n - 1;
+    END;
+    WRITE("Factorial is: ");
+    WRITE(fact);
+END
+ENDPROGRAM;

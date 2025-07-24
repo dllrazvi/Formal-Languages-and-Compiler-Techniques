@@ -1,0 +1,28 @@
+N = { program, declarationlist, declaration, type, arraydecl, compoundstatement, statementlist, statement, simplestatement, assignstatement, iostatement, structurestatement, ifstatement, forstatement, whilestatement, expression, term, factor, constant, value, condition, RELATION }
+E = { STARTPROGRAM, VARIABLES:, IDENTIFIER, int, char, string, ARRAY, [, ], OF, BEGIN, END, READ, WRITE, IF, THEN, ELSE, FOR, FROM, TO, DO, ENDPROGRAM, =, +, -, *, /, (, ), INTEGER, CHAR, STRING, ==, <=, <, >, >=, != }
+S = program
+P = {
+    program -> "STARTPROGRAM" "VARIABLES:" declarationlist ";" compoundstatement "ENDPROGRAM",
+    declarationlist -> declaration | declaration ";" declarationlist,
+    declaration -> IDENTIFIER ":" type,
+    type -> "int" | "char" | "string" | arraydecl,
+    arraydecl -> "ARRAY" "[" INTEGER "]" "OF" type,
+    compoundstatement -> "BEGIN" statementlist "END",
+    statementlist -> statement | statement ";" statementlist,
+    statement -> simplestatement | structurestatement,
+    simplestatement -> assignstatement | iostatement,
+    assignstatement -> IDENTIFIER "=" expression,
+    iostatement -> "READ" "(" IDENTIFIER ")" | "WRITE" "(" IDENTIFIER ")" | "WRITE" "(" constant ")",
+    structurestatement -> ifstatement | forstatement | whilestatement,
+    ifstatement -> "IF" condition "THEN" "BEGIN" statementlist "END"
+                 | "IF" condition "THEN" "BEGIN" statementlist "END" "ELSE" "BEGIN" statementlist "END",
+    forstatement -> "FOR" IDENTIFIER "FROM" value "TO" value "DO" "BEGIN" statementlist "END",
+    whilestatement -> "WHILE" condition "DO" "BEGIN" statementlist "END",
+    expression -> term | expression "+" term | expression "-" term,
+    term -> factor | term "*" factor | term "/" factor,
+    factor -> IDENTIFIER | constant | "(" expression ")",
+    constant -> INTEGER | CHAR | STRING,
+    value -> IDENTIFIER | INTEGER,
+    condition -> expression RELATION expression,
+    RELATION -> "==" | "<=" | "<" | ">" | ">=" | "!="
+}

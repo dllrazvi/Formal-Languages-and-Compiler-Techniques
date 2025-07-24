@@ -1,0 +1,21 @@
+STARTPROGRAM
+VARIABLES:
+    n : int
+    fact : int;
+BEGIN
+    WRITE("Enter a number: );
+    READ(n);
+    fact = 1;
+    WHILE n > 1 DO
+    BEGIN
+        fact = fact * n;
+        n = n - 1
+    END;
+    WRITE("Factorial is: ");
+    WRITE(fact);
+END
+ENDPROGRAM;
+
+Lexical Errors:
+1.Missing semicolon after the variable declaration: n : int should be n : int;
+2.Missing closing double quote in the WRITE statement: WRITE("Enter a number: ); should be WRITE("Enter a number: ");

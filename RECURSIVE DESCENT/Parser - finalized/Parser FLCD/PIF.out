@@ -1,0 +1,18 @@
+
+--------------
+State: q Index: 0
+Working stack: []
+Input stack: ['program']
+expand
+
+--------------
+State: q Index: 0
+Working stack: [('program', 1)]
+Input stack: ['BEGIN', 'statement_list', 'END']
+momentary insuccess
+
+--------------
+State: b Index: 0
+Working stack: [('program', 1)]
+Input stack: ['BEGIN', 'statement_list', 'END']
+another try

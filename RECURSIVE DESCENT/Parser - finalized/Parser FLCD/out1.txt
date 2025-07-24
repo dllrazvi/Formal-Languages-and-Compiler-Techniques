@@ -1,0 +1,18 @@
+
+--------------
+State: q Index: 0
+Working stack: []
+Input stack: ['S']
+expand
+
+--------------
+State: q Index: 0
+Working stack: [('S', 1)]
+Input stack: ['a', 'A']
+momentary insuccess
+
+--------------
+State: b Index: 0
+Working stack: [('S', 1)]
+Input stack: ['a', 'A']
+another try

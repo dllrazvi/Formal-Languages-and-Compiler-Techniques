@@ -1,0 +1,18 @@
+STARTPROGRAM
+VARIABLES:
+    sum : int;
+    num : int;
+    i : int;
+BEGIN
+    sum = 0;
+    FOR i FROM 1 TO 5 DO
+    BEGIN
+        WRITE("Enter number ");
+        WRITE(i);
+        READ(num);
+        sum = sum + num;
+    END;
+    WRITE("The average is: ");
+    WRITE(sum / 5);
+END
+ENDPROGRAM;

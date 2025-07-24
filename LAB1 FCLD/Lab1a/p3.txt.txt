@@ -1,0 +1,26 @@
+STARTPROGRAM
+VARIABLES:
+    a : int;
+    b : int;
+BEGIN
+    WRITE("Read a: ");
+    READ(a);
+    WRITE("Read b: ");
+    READ(b);
+    
+    WHILE a != b DO
+    BEGIN
+        IF a > b THEN
+	    BEGIN
+            a = a - b;
+            END
+        ELSE
+	    BEGIN
+            b = b - a;
+	    END
+    END;
+    
+    WRITE("The GCD is: ");
+    WRITE(a);  
+END
+ENDPROGRAM;

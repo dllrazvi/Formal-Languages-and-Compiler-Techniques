@@ -1,0 +1,25 @@
+Alphabet:
+- lowercase and uppercase letters of the English alphabet: a-z, A-Z
+- decimal digits 0-9
+- tilde char: ~
+
+Lexic:
+
+a) Special tokens:
+- separators: '(', ')', '[', ']', '{', '}', ':', ';', ' '
+- reserved words: int, char, string, array, if, else, while, for, read, write
+
+b) Operators:
+   I. arithmetic: +(addition), -(subtraction), *(multiplication), /(division)
+   II. relational: ==(equal), <=(less than or equal), <(less than), >(greater than), >=(greater than or equal), !=(not equal)
+   III. assignment: =
+
+c) Identifiers:
+- A sequence of letters, digits, or '~', starting with a letter or '~'.
+- identifier = ('~' | letter) {letter | digit | '~'}
+
+d) Constants:
+- int = '0' | ['+' | '-'] non_null_digit {digit}
+- char = letter | digit
+- string = "\"" {char} "\"" (up to 256 characters)
+- char = letter | digit | special characters (except for ")
